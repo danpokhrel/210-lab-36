@@ -5,6 +5,12 @@
 #include "StrBinaryTree.h"
 using namespace std;
 
+// Prototypes
+void addNode(StrBinaryTree &tree);
+void deleteNode(StrBinaryTree &tree);
+void searchNode(StrBinaryTree &tree);
+void modifyNode(StrBinaryTree &tree);
+
 int main() {
     StrBinaryTree tree;
 
@@ -29,16 +35,16 @@ int main() {
         switch (choice)
         {
         case 1:
-            /* code */
+            addNode(tree);
             break;
         case 2:
-            /* code */
+            deleteNode(tree);
             break;
         case 3:
-            /* code */
+            searchNode(tree);
             break;
         case 4:
-            /* code */
+            modifyNode(tree);
             break;
         case 5:
             break;
@@ -52,4 +58,48 @@ int main() {
     }
 
     return 0;
+}
+
+void addNode(StrBinaryTree &tree)
+{
+    cout << "\nCode: ";
+    string x; cin >> x;
+
+    tree.insertNode(x);
+    cout << "Added " << x << " to tree.\n\n";
+}
+
+void deleteNode(StrBinaryTree &tree)
+{
+    cout << "\nCode: ";
+    string x; cin >> x;
+
+    tree.remove(x);
+    cout << "Removed " << x << " from tree.\n\n";
+}
+
+void searchNode(StrBinaryTree &tree)
+{
+    cout << "\nCode to modify: ";
+    string x; cin >> x;
+
+    bool s = tree.searchNode(x);
+    cout << x;
+    if (s) cout << " found "; else cout << " not found";
+    cout << " in tree.\n\n";
+}
+
+void modifyNode(StrBinaryTree &tree)
+{
+    cout << "\nCode to modify: ";
+    string x; cin >> x;
+
+    bool s = tree.searchNode(x);
+    if (!s){
+        cout << "Error: node not found\n\n";
+        return;
+    }
+
+    cout << "New code: "; cin >> x;
+    
 }
