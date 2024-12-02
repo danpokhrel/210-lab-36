@@ -1,6 +1,6 @@
 // Implementation file for the IntBinaryTree class
 #include <iostream>
-#include "IntBinaryTree.h"
+#include "StrBinaryTree.h"
 using namespace std;
 
 // insert accepts a TreeNode pointer and a pointer to a node.

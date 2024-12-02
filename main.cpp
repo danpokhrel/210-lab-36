@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "IntBinaryTree.h"
+#include "StrBinaryTree.h"
 using namespace std;
 
 int main() {
