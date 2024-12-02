@@ -59,19 +59,21 @@ bool StrBinaryTree::searchNode(string str) {
    return false;
 }
 
-void StrBinaryTree::modifyNode(string)
+void StrBinaryTree::modifyNode(string str, string str2)
 {
-   TreeNode *nodePtr = root;
    TreeNode *node = root;
 
-   while (nodePtr)    {
-      if (nodePtr->value == str)
-         return true;
-      else if (str < nodePtr->value)
-         nodePtr = nodePtr->left;
+   while (node)    {
+      if (node->value == str)
+         break;
+      else if (str < node->value)
+         node = node->left;
       else
-         nodePtr = nodePtr->right;
+         node = node->right;
    }
+   if (!node) return;
+
+   node->value = str2;
 }
 
 // remove calls deleteNode to delete the      

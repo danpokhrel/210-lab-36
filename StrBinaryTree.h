@@ -37,7 +37,7 @@ public:
    // Public interface for inserting, searching, and removing nodes.
    void insertNode(string);
    bool searchNode(string);
-   void modifyNode(string);
+   void modifyNode(string, string);
    void remove(string);
 
    // Public wrappers for tree traversal functions.

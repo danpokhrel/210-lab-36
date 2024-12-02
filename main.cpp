@@ -74,6 +74,11 @@ void deleteNode(StrBinaryTree &tree)
     cout << "\nCode: ";
     string x; cin >> x;
 
+    if (!tree.searchNode(x)){
+        cout << "Node not found.\n\n";
+        return;
+    }
+
     tree.remove(x);
     cout << "Removed " << x << " from tree.\n\n";
 }
@@ -85,7 +90,7 @@ void searchNode(StrBinaryTree &tree)
 
     bool s = tree.searchNode(x);
     cout << x;
-    if (s) cout << " found "; else cout << " not found";
+    if (s) cout << " found"; else cout << " not found";
     cout << " in tree.\n\n";
 }
 
@@ -100,6 +105,9 @@ void modifyNode(StrBinaryTree &tree)
         return;
     }
 
-    cout << "New code: "; cin >> x;
-    
+    cout << "New code: ";
+    string y; cin >> y;
+    tree.modifyNode(x, y);
+
+    cout << "Modified " << x << " into " << y << "\n\n";
 }
